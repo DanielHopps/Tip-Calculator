@@ -1,0 +1,285 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+input,
+button {
+  font-family: "Space Mono", monospace;
+}
+
+body {
+  font-size: 14px;
+  background-color: hsl(185, 41%, 84%);
+  padding: 2%;
+}
+
+h2 {
+  text-align: center;
+  color: hsl(183, 100%, 15%);
+  letter-spacing: 6px;
+  margin: 3.42em 0 2.85em 0;
+}
+
+input {
+  font-size: 18px;
+  border: none;
+  color: hsl(183, 100%, 15%);
+}
+
+input:hover,
+button,
+.percentage,
+label {
+  cursor: pointer;
+}
+
+input[type="text"]:hover,
+input[type="text"]:focus {
+  border: solid 2px hsl(172, 67%, 45%);
+}
+
+input[type="radio"]:checked + label {
+  color: hsl(183, 100%, 15%);
+  background-color: hsl(172, 67%, 45%);
+  border-radius: 6px;
+}
+
+label {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  display: block;
+}
+
+.container {
+  /* max-width: 920px; */
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 580px;
+  margin: 0 auto;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 20px;
+  padding: 2.28em;
+}
+
+.calc-tip,
+.display-tip-total {
+  width: 100%;
+}
+
+.bill-amount,
+.tips {
+  margin-bottom: 2.85em;
+}
+
+.bill,
+.tip,
+.number-of-people,
+#tip-custom::placeholder {
+  color: hsl(186, 14%, 43%);
+}
+
+.bill-amount label,
+.num-people label {
+  justify-content: start;
+}
+
+.dollar,
+.person,
+input::placeholder {
+  color: hsl(184, 14%, 56%);
+}
+.bill-total,
+.tip-amount,
+.people-amount {
+  background-color: hsl(189, 41%, 97%);
+  border: solid 2px hsl(189, 41%, 97%);
+  border-radius: 6px;
+  transition: ease-in-out 0.2s;
+}
+
+.bill-total,
+.people-amount {
+  text-align: end;
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+}
+
+.bill-input,
+.person-input {
+  position: relative;
+}
+
+.bill,
+.tip,
+.number-of-people {
+  margin-bottom: 0.8em;
+}
+
+.dollar,
+.person {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 10px;
+  margin: auto;
+}
+
+input[type="radio"] {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.tip-percentages {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+  grid-auto-rows: 48px;
+}
+
+.percentage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(0, 0%, 100%);
+  font-size: 1.3em;
+  border-radius: 6px;
+  transition: ease-in-out 0.2s;
+}
+
+.percentage:hover {
+  color: hsl(183, 100%, 15%);
+  background-color: hsl(172, 67%, 45%);
+}
+
+.percentage:nth-child(6) {
+  background-color: transparent;
+}
+
+.percentage input[type="text"] {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  text-align: end;
+  font-size: 1.3em;
+  padding: 0 0.6rem;
+}
+
+.percentage input[type="text"]::placeholder {
+  text-align: center;
+}
+
+.error-text {
+  display: flex;
+}
+
+.error-message {
+  opacity: 0;
+  color: hsl(13, 67%, 59%);
+  display: flex;
+  width: 100%;
+  justify-content: end;
+}
+
+.display-tip-total {
+  border-radius: 10px;
+  background-color: hsl(183, 100%, 15%);
+  padding: 1.6em;
+  display: flex;
+  flex-direction: column;
+}
+
+.display-tip-person,
+.display-total-person {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.display-tip-person {
+  margin-bottom: 2.3em;
+}
+
+.display-total-person {
+  margin-bottom: 3.2em;
+}
+
+.tip-total {
+  color: hsl(0, 0%, 100%);
+}
+
+.per-person {
+  color: hsl(186, 14%, 43%);
+}
+
+.display-amount {
+  font-size: 2em;
+  color: hsl(172, 67%, 45%);
+}
+
+.reset-btn {
+  padding: 0.6em 0;
+  text-transform: uppercase;
+  font-size: 20px;
+  border-radius: 6px;
+  border: none;
+  color: hsl(183, 100%, 15%);
+  transition: ease-in-out 0.3s;
+}
+
+.active:hover {
+  background-color: hsl(172, 90%, 57%);
+}
+
+.active {
+  background-color: hsl(172, 67%, 45%);
+}
+
+.disabled {
+  background-color: hsl(183, 100%, 19%);
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    max-width: 920px;
+  }
+
+  .display-tip-person {
+    margin-bottom: 3.2em;
+  }
+
+  .display-total-person {
+    margin-bottom: auto;
+  }
+
+  .display-amount {
+    font-size: 3em;
+  }
+}
+
+.error {
+  border: solid 2px hsl(13, 67%, 59%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(356, 100%, 52%);
+}
